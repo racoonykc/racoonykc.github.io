@@ -1,5 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- 在</head>标签前添加以下样式 -->
+<style>
+    #matrix-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1; /* 确保背景在内容后面 */
+    }
+    body {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.85); /* 深色背景更好呈现效果 */
+    }
+    /* 调整原有文字颜色 */
+    section, header, footer {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+</style>
+
+<!-- 在<body>标签开始后添加canvas -->
+<canvas id="matrix-canvas"></canvas>
+
+<!-- 在</body>前添加JavaScript代码 -->
+<script>
+    (function() {
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // 设置canvas尺寸
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // 二进制字符集
+        const binary = '01';
+        const chars = binary.split('');
+
+        // 列宽和下落速度
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+
+        // 初始化下落数组
+        for(let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        // 绘制函数
+        function draw() {
+            // 半透明背景制造拖尾效果
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // 设置字体样式
+            ctx.fillStyle = '#4CAF50'; // 使用主题色
+            ctx.font = fontSize + 'px monospace';
+
+            // 为每个列生成字符
+            for(let i = 0; i < drops.length; i++) {
+                // 随机生成二进制字符
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                
+                // 绘制字符
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                // 重置到达底部的列
+                if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        // 动画循环
+        setInterval(draw, 50);
+    })();
+</script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
