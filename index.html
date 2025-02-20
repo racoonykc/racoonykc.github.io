@@ -1,160 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- 在</head>标签前添加以下样式 -->
-<style>
-    #matrix-canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: -1; /* 确保背景在内容后面 */
-    }
-    body {
-        position: relative;
-        background-color: rgba(0, 0, 0, 0.85); /* 深色背景更好呈现效果 */
-    }
-    /* 调整原有文字颜色 */
-    section, header, footer {
-        background-color: rgba(255, 255, 255, 0.9);
-    }
-</style>
-
-<!-- 在<body>标签开始后添加canvas -->
-<canvas id="matrix-canvas"></canvas>
-
-<!-- 在</body>前添加JavaScript代码 -->
-<script>
-    (function() {
-        const canvas = document.getElementById('matrix-canvas');
-        const ctx = canvas.getContext('2d');
-        
-        // 设置canvas尺寸
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-
-        // 二进制字符集
-        const binary = '01';
-        const chars = binary.split('');
-
-        // 列宽和下落速度
-        const fontSize = 14;
-        const columns = canvas.width / fontSize;
-        const drops = [];
-
-        // 初始化下落数组
-        for(let i = 0; i < columns; i++) {
-            drops[i] = 1;
-        }
-
-        // 绘制函数
-        function draw() {
-            // 半透明背景制造拖尾效果
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            // 设置字体样式
-            ctx.fillStyle = '#4CAF50'; // 使用主题色
-            ctx.font = fontSize + 'px monospace';
-
-            // 为每个列生成字符
-            for(let i = 0; i < drops.length; i++) {
-                // 随机生成二进制字符
-                const text = chars[Math.floor(Math.random() * chars.length)];
-                
-                // 绘制字符
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-                // 重置到达底部的列
-                if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-        }
-
-        // 动画循环
-        setInterval(draw, 50);
-    })();
-</script>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Personal Website</title>
+    <title>Kaicheng Yang's Portfolio</title>
     <style>
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.85);
             color: #333;
+            line-height: 1.6;
         }
         header {
-            background-color: #4CAF50;
+            background-color: rgba(76, 175, 80, 0.9);
             color: white;
-            padding: 10px 20px;
-            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
         }
         nav {
-            margin: 20px;
-            text-align: center;
+            padding: 1rem 0;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         nav a {
-            margin: 0 15px;
-            text-decoration: none;
+            margin: 0 1.5rem;
+            padding: 0.5rem 1rem;
             color: #4CAF50;
-            font-weight: bold;
+            font-weight: 600;
+            border-radius: 20px;
+            transition: all 0.3s;
         }
         nav a:hover {
-            text-decoration: underline;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
         }
         section {
-            max-width: 800px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         footer {
             text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #4CAF50;
+            padding: 1.5rem;
+            background: rgba(76, 175, 80, 0.9);
             color: white;
+            margin-top: 3rem;
+        }
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 1rem auto;
+            display: block;
+            border: 4px solid #4CAF50;
+        }
+        .article-list {
+            list-style: none;
+            padding: 0;
+        }
+        .article-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-left: 4px solid #4CAF50;
         }
     </style>
 </head>
+
 <body>
+    <canvas id="matrix-canvas"></canvas>
+    
     <header>
-        <h1> Personal Website of Kaicheng Yang</h1>
-        <p> Undergraduated student from SJTU , majored in AU </p>
+        <div class="container">
+            <!-- 插入个人照片 -->
+            <img src="微信图片编辑_20250213230552.jpg" alt="Kaicheng Yang" class="profile-img">
+            <div class="text-center">
+                <h1>Kaicheng Yang</h1>
+                <p>AI Researcher & Developer</p>
+                <p>Shanghai Jiao Tong University</p>
+            </div>
+        </div>
     </header>
-    <nav>
+    <style>
+        .text-center {
+            text-align: center;
+        }
+    </style>
+
+    <nav class="container">
         <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#news">Latest News</a>
+        <a href="#casual">随笔杂谈</a>
     </nav>
-    <section id="about">
+
+    <section id="about" class="container">
         <h2>About Me</h2>
-        <p>Hello! I'm a dedicated undergraduate student majoring in AU. I have a strong interest in Model Compressing , like Binary Neural Network.</p>
+        
+        <p>我是杨凯程，上海交大自动化系大二在读，来自广东东莞。本人注意力涣散，喜欢过数学，沉迷过算法，目前仍在单调下降，希望在下一个epoch遇见人生的真谛。</p>
+        <h3>❤️ 目前感兴趣于</h3>
+        <ol class="principles">
+            <li>⚛️ 通过知识蒸馏/量化/剪枝，寻找生成模型的本质维度</li>
+        </ol>        
+        <div class="footnote">
+            <p>当暂离公式推导时，可能正在：<br>
+            - 用概率论解构卡牌游戏的策略空间<br>
+            - 在强化学习与人类决策间寻找同构映射<br>
+            <a href="mailto:kaichengy62@gmail.com">📧 学术交流</a> | 
+            <a href="https://github.com/racoonykc">📑 代码仓库</a></p>
+            
+            <p class="philosophy">「不定期分享心得与感悟」</p>
+        </div>
     </section>
-    <section id="projects">
-        <h2>My Projects</h2>
-        <ul>
-            <li><b>Project 1:</b> <a href="https://github.com/racoonykc/Effecient_One_Step_SR">The first binary one step diffusion model in SR Link</a> - The first binary one step diffusion model in SR.</li>
-      </ul>
+
+    <section id="news" class="container">
+        <h2>Latest News</h2>
+        <div class="news-item">
+            <p>2025.02 | 首个单步扩散二值化超分辨率模型 <a href="https://arxiv.org/abs/2502.00333">BiMaCoSR </a></p>
+            <p>2024.12 | 英飞凌奖学金&校设B等奖学金 </p>
+            <p>2024.05 | 转专业->自动化</p>
+            <p>2024.02 | 加入<a href="https://yulunzhang.com/">张宇伦老师</a>的实验室进行科研学习</p>
+            <p>2023.11 | 十五届全国大学生数学竞赛一等奖</p>
+            <p>2023.08 | 高考->上海交通大学电气工程，bro杨凯森->清华CS</p>
+      </div>
     </section>
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>You can reach me at <a href="kaichengy62@gmail.com">kaichengy62@gmail.com</a>.</p>
-        <p>Check out my <a href="https://github.com/racoonykc">GitHub</a> for more projects.</p>
+
+    <section id="casual" class="container">
+        <h2>随笔杂谈（open soon ）</h2>
+        <!-- <ul class="article-list">
+            <li class="article-item">
+                <h3>模型二值化的哲学思考</h3>
+                <p>2024年2月 | 在追求极致效率的过程中...</p>
+            </li>
+        </ul> -->
     </section>
+
     <footer>
-        <p>&copy; 2025 Kaicheng Yang. All Rights Reserved.</p>
+        <div class="container">
+            <p>📧 kaichengy62@gmail.com | 💻 <a href="https://github.com/racoonykc" style="color: white;">GitHub</a></p>
+            <p>© 2025 Kaicheng Yang.</p>
+        </div>
     </footer>
+
+
+    <script>
+        (function() {
+            const canvas = document.getElementById('matrix-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // 设置canvas尺寸
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            // 二进制字符集
+            const binary = '01';
+            const chars = binary.split('');
+
+            // 列宽和下落速度
+            const fontSize = 14;
+            const columns = canvas.width / fontSize;
+            const drops = [];
+
+            // 初始化下落数组
+            for(let i = 0; i < columns; i++) {
+                drops[i] = 1;
+            }
+
+            // 绘制函数
+            function draw() {
+                // 半透明背景制造拖尾效果
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // 设置字体样式
+                ctx.fillStyle = '#4CAF50'; // 使用主题色
+                ctx.font = fontSize + 'px monospace';
+
+                // 为每个列生成字符
+                for(let i = 0; i < drops.length; i++) {
+                    // 随机生成二进制字符
+                    const text = chars[Math.floor(Math.random() * chars.length)];
+                    
+                    // 绘制字符
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                    // 重置到达底部的列
+                    if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+
+            // 动画循环
+            setInterval(draw, 50);
+        })();
+    </script>
+
 </body>
 </html>
