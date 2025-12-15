@@ -42,7 +42,7 @@ I am passionate about exploring methods to build powerful yet resource-conscious
 ---
 
 ## 📣 News / Announcements
-
+* **\[2025.12\]** ✍️ 1 preprints released on **arXiv**.
 * **\[2025.9\]** 💰 Receive **¥100,000 RMB** in support from the **National Natural Science Foundation of China (NSFC)** for my research project.
 * **\[2025.9\]** ✍️ 3 preprints released on **arXiv**.
 * **\[2025.5\]** 🎉 Our paper, **BiMaCoSR**, has been accepted to **ICML 2025**!
