@@ -42,7 +42,7 @@ I am passionate about exploring methods to build powerful yet resource-conscious
 ---
 
 ## 📣 News / Announcements
-* **\[2026.2\]** ✍️ 2 preprints released on **arXiv**.
+* **\[2026.2\]** ✍️ 3 preprints released on **arXiv**.
 * **\[2026.1\]** ✍️ Our paper, **PT^2LLM**, has been accepted to **ICLR 2026**!
 * **\[2025.12\]** ✍️ 1 preprints released on **arXiv**.
 * **\[2025.10\]** 🎉 The team I participated in won the National Challenge Cup Grand Prize.(挑战杯全国特等奖).
