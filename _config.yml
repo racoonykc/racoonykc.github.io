@@ -6,10 +6,12 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Kaicheng
 middle_name: ""
 last_name: Yang
+# Shown after the English name (about page title, nav brand, footer, meta author).
+chinese_name: 杨凯程
 contact_note: >
   Email is the best way to reach me.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Academic website for research and projects by Kaicheng Yang.
+  Academic website for research and projects by Kaicheng Yang (杨凯程).
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
