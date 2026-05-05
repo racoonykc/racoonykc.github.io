@@ -1,0 +1,70 @@
+* {
+	box-sizing: border-box;
+	-webkit-text-size-adjust: none;
+}
+
+html {
+	font-size: 20px !important;
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+	font-family: "Inter", "Avenir Next", "Helvetica Neue", Arial, "Microsoft Yahei",
+		-apple-system, sans-serif !important;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background: #101513;
+	color: #17201d;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-touch-callout: none;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	border: 0;
+	vertical-align: middle;
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-link);
+	outline: none;
+}
+
+.lang-toggle {
+	position: fixed;
+	top: 22px;
+	right: 22px;
+	z-index: 1000;
+	width: 44px;
+	height: 36px;
+	border: 1px solid rgba(246, 241, 232, 0.42);
+	border-radius: 999px;
+	background: rgba(16, 21, 19, 0.42);
+	color: #f6f1e8;
+	font-size: 0.72rem;
+	font-weight: 700;
+	backdrop-filter: blur(12px);
+	cursor: pointer;
+	transition: all 0.2s ease;
+
+	&:hover,
+	&:focus {
+		background: #f6f1e8;
+		color: #17201d;
+	}
+}

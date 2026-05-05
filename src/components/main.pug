@@ -1,0 +1,37 @@
+.content.content-main#hub
+	#card
+		.card-inner.fade
+			.hub-card
+				header.hub-header
+					img(src=`${main.avatar.link}` width=`${main.avatar.width}` height=`${main.avatar.height}` alt=`${main.name} portrait`)
+					p.kicker(data-en= main.role data-zh= main.roleZh) #{main.role}
+					h1(data-translate="name" data-en= main.name data-zh= main.chineseName) #{main.name}
+					p#signature.signature(data-translate="signature" original-content=`${main.signature}` data-en= main.signature data-zh= main.signatureZh) #{main.signature}
+
+				.focus-strip
+					each item in main.focus
+						.focus-pill
+							strong(data-en= item.title data-zh= item.titleZh) #{item.title}
+							span(data-en= item.text data-zh= item.textZh) #{item.text}
+
+				.hub-middle
+					section.hub-news
+						h2(data-en= main.labels.news data-zh= main.labels.newsZh) #{main.labels.news}
+						.news-scroll
+							each item, index in main.news
+								p(data-en= item data-zh= main.newsZh[index]) #{item}
+					section.hub-honors
+						h2(data-en= main.labels.honors data-zh= main.labels.honorsZh) #{main.labels.honors}
+						ul
+							each item, index in main.honors
+								li(data-en= item data-zh= main.honorsZh[index]) #{item}
+
+				.affiliations
+					each item in main.affiliations
+						a(href=item.href target="_blank" rel="noopener noreferrer" data-en= item.text data-zh= item.textZh) #{item.text}
+
+				.hub-links
+					each item in main.links
+						a.hub-link(href=item.href target=item.external ? "_blank" : undefined rel=item.external ? "noopener noreferrer" : undefined aria-label=item.text data-en= item.text data-zh= item.textZh) #{item.text}
+
+	canvas.grid-background#gridCanvas

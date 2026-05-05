@@ -1,0 +1,26 @@
+@color-link: #40615d;
+@color-link-hover: #7d3f2d;
+@color-enter: #f5efe4;
+@color-title: #f8f4ea;
+@color-content: #f6f1e8;
+@font-alt: 200 6vw/1 "Inter", "Avenir Next", "Helvetica Neue", Arial, "Microsoft Yahei",
+	-apple-system, sans-serif;
+
+:root {
+	--color-link: @color-link;
+	--color-link-hover: @color-link-hover;
+	--color-enter: @color-enter;
+	--color-title: @color-title;
+	--color-content: @color-content;
+	--font-alt: @font-alt;
+}
+
+.fade {
+	opacity: 0;
+	transition: all 1s;
+	transform: translateY(80px);
+	&.in {
+		opacity: 1;
+		transform: none;
+	}
+}

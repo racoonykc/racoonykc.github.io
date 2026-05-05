@@ -1,0 +1,10 @@
+doctype html
+html(lang="en")
+	include components/head
+
+	body
+		button.lang-toggle(type="button" data-lang-toggle aria-label="Switch language") 中
+		main
+			include components/intro.pug
+			include components/main.pug
+			include components/scripts

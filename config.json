@@ -1,0 +1,204 @@
+{
+	"head": {
+		"title": "Kaicheng Yang | Academic Homepage",
+		"description": "Academic website for Kaicheng Yang (Yang Kaicheng), undergraduate researcher at Shanghai Jiao Tong University working on efficient machine learning, diffusion models, and AI for life science.",
+		"favicon": "favicon.ico"
+	},
+	"intro": {
+		"title": "Kaicheng Yang",
+		"subtitle": "Efficient ML  ·  AI4Human",
+		"motto": "淡观山水闲看月  只读诗书不念愁",
+		"enter": "enter",
+		"enterZh": "进入",
+		"supportAuthor": false,
+		"background": true
+	},
+	"main": {
+		"name": "Kaicheng Yang",
+		"chineseName": "杨凯程",
+		"role": "Undergraduate Researcher · Shanghai Jiao Tong University",
+		"roleZh": "上海交通大学自动化系 · 本科生研究者",
+		"signature": "I work between efficient machine learning and AI4Human: compressing models to identify the necessary structures intelligence truly depends on, and using AI to understand the human brain while expanding the interaction bandwidth between carbon-based and silicon-based intelligence.",
+		"signatureZh": "我的研究位于 Efficient ML 与 AI4Human 之间：一方面通过压缩模型识别智能真正依赖的必要结构，并以此迈向下一代 AI 架构；另一方面尝试利用 AI 理解人类大脑，探索下一代人机交互方式，提高碳基智能与硅基智能之间的交互带宽。",
+		"avatar": {
+			"link": "assets/avatar.jpg",
+			"height": "132",
+			"width": "132"
+		},
+		"affiliations": [
+			{
+				"text": "Department of Automation, SJTU",
+				"textZh": "上海交通大学自动化系",
+				"href": "https://sais.sjtu.edu.cn/"
+			},
+			{
+				"text": "Prof. Yulun Zhang's Group",
+				"textZh": "张宇伦老师课题组",
+				"href": "https://yulunzhang.com/group/"
+			},
+			{
+				"text": "Tsinghua AIR · GenSI Lab · Prof. Hao Zhou / Prof. Weiying Ma",
+				"textZh": "清华 AIR · GenSI Lab · 周浩老师 / 马维英老师",
+				"href": "https://www.gensi-thuair.com/"
+			}
+		],
+		"focus": [
+			{
+				"title": "Efficient ML",
+				"titleZh": "高效机器学习",
+				"text": "I use model compression as a scientific probe: by stripping away redundancy through quantization, sparsity, and low-rank structure, I try to identify the necessary structures that intelligence truly depends on and use them to move toward next-generation AI architectures.",
+				"textZh": "我将模型压缩视为一种研究智能结构的探针：通过量化、稀疏和低秩结构不断剥离冗余，观察哪些结构仍然保留下来，从而识别智能真正依赖的必要结构，并以此迈向下一代 AI 架构。"
+			},
+			{
+				"title": "AI4Human",
+				"titleZh": "AI4Human",
+				"text": "I want to use AI to understand the human brain, explore the next generation of human-computer interaction, and increase the communication bandwidth between carbon-based and silicon-based intelligence.",
+				"textZh": "我希望利用 AI 理解人类大脑，探索下一代人机交互方式，并提高碳基智能与硅基智能之间的交互带宽。"
+			}
+		],
+		"news": [
+			"2026.05 · RobuQ, Info-Gain, and Q-DiT4SR accepted to ICML 2026.",
+			"2026.02 · Three preprints released on arXiv.",
+			"2026.01 · PT^2-LLM accepted to ICLR 2026.",
+			"2025.10 · National Challenge Cup Grand Prize.",
+			"2025.09 · NSFC undergraduate research project support.",
+			"2025.09 · Three preprints released on arXiv.",
+			"2025.05 · BiMaCoSR accepted to ICML 2025."
+		],
+		"newsZh": [
+			"2026.05 · RobuQ、Info-Gain 和 Q-DiT4SR 被 ICML 2026 接收。",
+			"2026.02 · 三篇预印本发布于 arXiv。",
+			"2026.01 · PT^2-LLM 被 ICLR 2026 接收。",
+			"2025.10 · 参与团队获得挑战杯全国特等奖。",
+			"2025.09 · 获国自然青年科学家（本科生）项目支持。",
+			"2025.09 · 三篇预印本发布于 arXiv。",
+			"2025.05 · BiMaCoSR 被 ICML 2025 接收。"
+		],
+		"honors": [
+			"2025 · National Challenge Cup Grand Prize",
+			"2025 · NSFC Undergraduate Research Project Support",
+			"2024 · Infineon Scholarship",
+			"2024 · University Second-Class Scholarship",
+			"2023 · First Prize, National College Student Mathematics Competition"
+		],
+		"honorsZh": [
+			"2025 · 挑战杯全国特等奖",
+			"2025 · 国自然青年科学家（本科生）项目支持",
+			"2024 · 英飞凌奖学金",
+			"2024 · 上海交通大学二等优秀奖学金",
+			"2023 · 全国大学生数学竞赛一等奖"
+		],
+		"labels": {
+			"news": "News",
+			"newsZh": "动态",
+			"honors": "Honors",
+			"honorsZh": "荣誉"
+		},
+		"publications": [
+			{
+				"venue": "ICML 2026",
+				"year": "2026",
+				"title": "RobuQ: Pushing DiTs to W1.58A2 via Robust Activation Quantization",
+				"authors": "Kaicheng Yang*, Xun Zhang*, Haotong Qin, Yucheng Lin, Kaisen Yang, Yulun Zhang",
+				"pdf": "https://arxiv.org/pdf/2509.23582",
+				"code": "https://github.com/racoonykc/RobuQ"
+			},
+			{
+				"venue": "ICML 2026",
+				"year": "2026",
+				"title": "Q-DiT4SR: Exploration of Detail-Preserving Diffusion Transformer Quantization for Real-World Image Super-Resolution",
+				"authors": "Xun Zhang*, Kaicheng Yang*, Hongliang Lu, Haotong Qin, Yong Guo, Yulun Zhang",
+				"pdf": "https://arxiv.org/pdf/2602.01273",
+				"code": "https://github.com/xunzhang1128/Q-DiT4SR"
+			},
+			{
+				"venue": "ICML 2026",
+				"year": "2026",
+				"title": "Improving Sampling for Masked Diffusion Models via Information Gain",
+				"authors": "Kaisen Yang, Jayden Teoh, Kaicheng Yang, Yitong Zhang, Alex Lamb",
+				"pdf": "https://arxiv.org/pdf/2602.18176",
+				"code": "https://github.com/yks23/Information-Gain-Sampler"
+			},
+			{
+				"venue": "ICLR 2026",
+				"year": "2026",
+				"title": "PT^2-LLM: Post-Training Ternarization for Large Language Models",
+				"authors": "Xianglong Yan*, Chengzhu Bao*, Zhiteng Li, Tianao Zhang, Kaicheng Yang, Haotong Qin, Ruobing Xie, Xingwu Sun, Yulun Zhang",
+				"pdf": "https://arxiv.org/pdf/2510.03267",
+				"code": "https://github.com/XIANGLONGYAN/PT2-LLM"
+			},
+			{
+				"venue": "ICML 2025",
+				"year": "2025",
+				"title": "BiMaCoSR: Binary One-Step Diffusion Model Leveraging Flexible Matrix Compression for Real Super-Resolution",
+				"authors": "Kai Liu*, Kaicheng Yang*, Zheng Chen, Zhiteng Li, Yong Guo, Wenbo Li, Linghe Kong, Yulun Zhang",
+				"pdf": "https://arxiv.org/pdf/2502.00333",
+				"code": "https://github.com/Kai-Liu001/BiMaCoSR"
+			},
+			{
+				"venue": "arXiv 2026",
+				"year": "2026",
+				"title": "AdaTSQ: Pushing the Pareto Frontier of Diffusion Transformers via Temporal-Sensitivity Quantization",
+				"authors": "Shaoqiu Zhang*, Zizhong Ding*, Kaicheng Yang, Junyi Wu, Xianglong Yan, Xi Li, Bingnan Duan, Jianping Fang, Yulun Zhang",
+				"pdf": "https://arxiv.org/pdf/2602.09883",
+				"code": "https://github.com/Qiushao-E/AdaTSQ"
+			},
+			{
+				"venue": "arXiv 2025",
+				"year": "2025",
+				"title": "TreeQ: Pushing the Quantization Boundary of Diffusion Transformer via Tree-Structured Mixed-Precision Search",
+				"authors": "Kaicheng Yang, Kaisen Yang, Baiting Wu, Xun Zhang, Qianrui Yang, Haotong Qin, He Zhang, Yulun Zhang",
+				"pdf": "https://arxiv.org/pdf/2512.06353",
+				"code": "https://github.com/racoonykc/TreeQ"
+			},
+			{
+				"venue": "arXiv 2025",
+				"year": "2025",
+				"title": "Explore-Execute Chain: Towards an Efficient Structured Reasoning Paradigm",
+				"authors": "Kaisen Yang*, Lixuan He*, Rushi Shah, Kaicheng Yang, Qinwei Ma, Dianbo Liu, Alex Lamb",
+				"pdf": "https://arxiv.org/pdf/2509.23946",
+				"code": "https://github.com/yks23/Explore-Execute-Chain"
+			},
+			{
+				"venue": "arXiv 2025",
+				"year": "2025",
+				"title": "QArtSR: Quantization via Reverse-Module and Timestep-Retraining in One-Step Diffusion based Image Super-Resolution",
+				"authors": "Libo Zhu, Haotong Qin, Kaicheng Yang, Wenbo Li, Yong Guo, Yulun Zhang, Susanto Rahardj, Xiaokang Yang",
+				"pdf": "https://arxiv.org/pdf/2503.05584",
+				"code": "https://github.com/libozhu03/QArtSR"
+			}
+		],
+		"links": [
+			{
+				"text": "Research",
+				"textZh": "研究",
+				"href": "research/",
+				"external": false
+			},
+			{
+				"text": "Publications",
+				"textZh": "论文",
+				"href": "publications/",
+				"external": false
+			},
+			{
+				"text": "Blog",
+				"textZh": "博客",
+				"href": "blog/",
+				"external": false
+			},
+			{
+				"text": "GitHub",
+				"textZh": "GitHub",
+				"href": "https://github.com/racoonykc",
+				"external": true
+			},
+			{
+				"text": "Email",
+				"textZh": "邮箱",
+				"href": "mailto:kaichengy62@gmail.com",
+				"external": false
+			}
+		]
+	}
+}

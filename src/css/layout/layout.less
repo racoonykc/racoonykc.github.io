@@ -1,0 +1,53 @@
+main {
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.content {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	background: transparent;
+
+	&-intro {
+		z-index: 100;
+		height: 200vh;
+	}
+
+	&-main {
+		position: fixed;
+		top: 0;
+		left: 0;
+		background:
+			radial-gradient(circle at 18% 18%, rgba(125, 63, 45, 0.24), transparent 28%),
+			linear-gradient(135deg, #101513, #293834 52%, #2f241d);
+	}
+
+	&-inner {
+		width: 100%;
+		height: 100vh;
+		position: relative;
+	}
+}
+
+.wrap {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.grid-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
