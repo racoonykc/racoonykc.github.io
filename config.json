@@ -157,7 +157,9 @@
 				"title": "Explore-Execute Chain: Towards an Efficient Structured Reasoning Paradigm",
 				"authors": "Kaisen Yang*, Lixuan He*, Rushi Shah, Kaicheng Yang, Qinwei Ma, Dianbo Liu, Alex Lamb",
 				"pdf": "https://arxiv.org/pdf/2509.23946",
-				"code": "https://github.com/yks23/Explore-Execute-Chain"
+				"code": "https://github.com/yks23/Explore-Execute-Chain",
+				"hidden": true,
+				"hiddenReason": "Temporarily hidden until the paper revision is ready."
 			},
 			{
 				"venue": "arXiv 2025",
