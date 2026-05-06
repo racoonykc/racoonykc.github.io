@@ -245,6 +245,98 @@
 	}
 }
 
+.visitor-widget {
+	position: absolute;
+	right: 22px;
+	bottom: 18px;
+	width: 238px;
+	padding: 13px;
+	border: 1px solid rgba(255, 255, 255, 0.28);
+	border-radius: 8px;
+	background: rgba(5, 5, 5, 0.74);
+	color: #f8f8f8;
+	box-shadow: 0 18px 46px rgba(0, 0, 0, 0.38);
+	backdrop-filter: blur(16px);
+	text-align: left;
+}
+
+.visitor-widget__header {
+	display: grid;
+	grid-template-columns: 10px minmax(0, 1fr) auto;
+	align-items: center;
+	gap: 8px;
+	color: #fff;
+	font-size: 0.66rem;
+	font-weight: 800;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+
+	small {
+		color: rgba(255, 255, 255, 0.52);
+		font-size: 0.56rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+	}
+}
+
+.visitor-widget__status,
+.visitor-widget__dot {
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: #e12424;
+	box-shadow: 0 0 0 4px rgba(225, 36, 36, 0.14);
+}
+
+.visitor-widget__body {
+	display: grid;
+	grid-template-columns: 86px minmax(0, 1fr);
+	gap: 10px;
+	margin-top: 10px;
+}
+
+.visitor-widget__map {
+	position: relative;
+	height: 54px;
+	overflow: hidden;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 6px;
+	background:
+		linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+		linear-gradient(0deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+		radial-gradient(ellipse at 24% 44%, rgba(255, 255, 255, 0.62) 0 9%, transparent 10%),
+		radial-gradient(ellipse at 50% 40%, rgba(255, 255, 255, 0.6) 0 8%, transparent 9%),
+		radial-gradient(ellipse at 71% 51%, rgba(255, 255, 255, 0.62) 0 12%, transparent 13%),
+		#0b0b0b;
+	background-size: 18px 18px, 18px 18px, 100% 100%, 100% 100%, 100% 100%, auto;
+}
+
+.visitor-widget__dot {
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
+
+.visitor-widget__empty {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.66);
+	font-size: 0.62rem;
+	line-height: 1.46;
+}
+
+.visitor-widget__embed {
+	min-width: 0;
+	max-height: 64px;
+	overflow: hidden;
+
+	img,
+	canvas,
+	iframe {
+		max-width: 100%;
+		height: auto;
+		filter: grayscale(1) contrast(1.15);
+	}
+}
+
 @media screen and (max-width: 760px) {
 	#card {
 		align-items: flex-start;
@@ -285,5 +377,13 @@
 	.hub-link {
 		min-width: 0;
 		flex: 1 1 120px;
+	}
+
+	.visitor-widget {
+		position: relative;
+		right: auto;
+		bottom: auto;
+		width: 100%;
+		margin-top: 18px;
 	}
 }

@@ -34,4 +34,20 @@
 					each item in main.links
 						a.hub-link(href=item.href target=item.external ? "_blank" : undefined rel=item.external ? "noopener noreferrer" : undefined aria-label=item.text data-en= item.text data-zh= item.textZh) #{item.text}
 
+				if main.visitorWidget && main.visitorWidget.enabled
+					.visitor-widget(aria-label=main.visitorWidget.title)
+						.visitor-widget__header
+							span.visitor-widget__status
+							span(data-en=main.visitorWidget.title data-zh=main.visitorWidget.titleZh) #{main.visitorWidget.title}
+							small(data-en=main.visitorWidget.subtitle data-zh=main.visitorWidget.subtitleZh) #{main.visitorWidget.subtitle}
+						.visitor-widget__body
+							.visitor-widget__map(aria-hidden="true")
+								each dot in main.visitorWidget.dots
+									span.visitor-widget__dot(style=`left:${dot.left};top:${dot.top}` title=dot.label)
+							if main.visitorWidget.scriptSrc
+								.visitor-widget__embed
+									script(type="text/javascript" id="visitor-map-tracker" src=main.visitorWidget.scriptSrc)
+							else
+								p.visitor-widget__empty(data-en=main.visitorWidget.emptyText data-zh=main.visitorWidget.emptyTextZh) #{main.visitorWidget.emptyText}
+
 	canvas.grid-background#gridCanvas

@@ -124,6 +124,43 @@ git add -A
 git commit -m "Update website source"
 ```
 
+## Visitor Map Widget
+
+The hub page contains a black-and-white visitor-map widget with red location
+dots. Because GitHub Pages is static, real visitor counting and location
+aggregation require an external service such as ClustrMaps or PulseMaps.
+
+The configuration entry is in:
+
+```bash
+/SPXvePFS/share-users/kcyang/homepages/homepage-source/config.json
+```
+
+Look for:
+
+```json
+"visitorWidget": {
+  "enabled": true,
+  "scriptSrc": ""
+}
+```
+
+To enable live tracking:
+
+1. Register `https://racoonykc.github.io` on a visitor-map service.
+2. Copy only the script `src` URL from the embed code.
+3. Paste that URL into `visitorWidget.scriptSrc`.
+4. Rebuild `dist`, sync to `site-deploy`, commit, and push the deploy branch.
+
+Example shape:
+
+```json
+"scriptSrc": "//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=YOUR_SITE_KEY"
+```
+
+Do not put private tokens in frontend code. Visitor-map widgets should only use
+public embed URLs intended to run in browsers.
+
 ## Sync Source Build To Deploy Worktree
 
 After the source version looks correct, copy `dist` into the deploy worktree:
@@ -206,4 +243,3 @@ git -C /SPXvePFS/share-users/kcyang/homepages/racoonykc.github.io status --short
 git -C /SPXvePFS/share-users/kcyang/homepages/homepage-source status --short
 git -C /SPXvePFS/share-users/kcyang/homepages/site-deploy status --short
 ```
-
