@@ -66,5 +66,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# Local GitHub token for scripts/push_website.sh. Never commit real PATs.
+.github_pat
+
 # next.js build output
 .next

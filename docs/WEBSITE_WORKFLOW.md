@@ -203,41 +203,101 @@ The remote repository is:
 https://github.com/racoonykc/racoonykc.github.io.git
 ```
 
-For a user site named `racoonykc.github.io`, GitHub Pages normally serves from
-the repository's default branch, usually `main`, at the repository root.
+The long-term publishing source should be:
 
-### Recommended Safe Publish
+```text
+Branch: deploy-homepage
+Folder: /(root)
+```
+
+GitHub supports publishing Pages from any branch in the repository, using either
+the branch root or a `/docs` folder as the publishing source. This site uses the
+`deploy-homepage` branch root so `main` and `gh-pages` do not need to be updated
+for normal deployments.
+
+### Configure Pages Source
+
+In GitHub:
+
+```text
+racoonykc/racoonykc.github.io -> Settings -> Pages
+Build and deployment -> Source: Deploy from a branch
+Branch: deploy-homepage
+Folder: /(root)
+Save
+```
+
+After this is set once, future deployments only need to push `deploy-homepage`.
+
+### Push With The Helper Script
+
+The helper script is:
+
+```bash
+/SPXvePFS/share-users/kcyang/homepages/homepage-source/scripts/push_website.sh
+```
+
+It pushes:
+
+- `homepage-source`
+- `deploy-homepage`
+
+It does not push `main` or `gh-pages`.
+
+The script can read your GitHub PAT in three ways:
+
+1. From the environment variable `GITHUB_PAT`.
+2. From a local ignored file:
+
+```bash
+/SPXvePFS/share-users/kcyang/homepages/homepage-source/.github_pat
+```
+
+3. From a hidden prompt when the script runs.
+
+Recommended one-time local setup:
+
+```bash
+cd /SPXvePFS/share-users/kcyang/homepages/homepage-source
+printf 'PASTE_YOUR_PAT_HERE\n' > .github_pat
+chmod 600 .github_pat
+chmod +x scripts/push_website.sh
+```
+
+Then push future committed changes with:
+
+```bash
+cd /SPXvePFS/share-users/kcyang/homepages/homepage-source
+scripts/push_website.sh
+```
+
+`.github_pat` is ignored by git and must never be committed.
+
+### Manual Push
 
 First push backup/source branches:
 
 ```bash
 cd /SPXvePFS/share-users/kcyang/homepages/racoonykc.github.io
-git push origin al-folio-source
+git push https://racoonykc@github.com/racoonykc/racoonykc.github.io.git al-folio-source
 
 cd /SPXvePFS/share-users/kcyang/homepages/homepage-source
-git push origin homepage-source
+git push https://racoonykc@github.com/racoonykc/racoonykc.github.io.git homepage-source
 
 cd /SPXvePFS/share-users/kcyang/homepages/site-deploy
-git push origin deploy-homepage
+git push https://racoonykc@github.com/racoonykc/racoonykc.github.io.git deploy-homepage
 ```
-
-Then, after confirming the remote branches exist, make the live GitHub Pages
-branch contain the deploy build:
-
-```bash
-cd /SPXvePFS/share-users/kcyang/homepages/site-deploy
-git push origin deploy-homepage:main
-```
-
-This makes the GitHub Pages site show the new static HomePage build.
 
 ### Roll Back To Old al-folio Site
 
-If you need to restore the old site later:
+If you need to restore the old site later, either change the GitHub Pages source
+back to the old branch or overwrite the deploy branch with the old site after
+confirming the old site is the intended live version. A direct overwrite command
+would be:
 
 ```bash
 cd /SPXvePFS/share-users/kcyang/homepages/racoonykc.github.io
-git push origin al-folio-source:main
+git push --force https://racoonykc@github.com/racoonykc/racoonykc.github.io.git al-folio-source:deploy-homepage
 ```
 
 GitHub Pages may need a short time to refresh after each push.
