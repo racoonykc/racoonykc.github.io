@@ -95,14 +95,15 @@
 			"honorsZh": "荣誉"
 		},
 		"visitorWidget": {
-			"enabled": true,
+			"trackingEnabled": true,
+			"displayEnabled": false,
 			"title": "Visitor Map",
 			"titleZh": "访问地图",
 			"subtitle": "Global traces",
 			"subtitleZh": "访客足迹",
 			"emptyText": "Live counter pending",
 			"emptyTextZh": "实时统计待接入",
-			"scriptSrc": "",
+			"scriptSrc": "//mapmyvisitors.com/map.js?d=JFD_Y3e6YAMQVTWl5ojWn4CHaTuxLY9BvUA1vXHLUE0&cl=ffffff&w=a",
 			"dots": [
 				{
 					"label": "Shanghai",

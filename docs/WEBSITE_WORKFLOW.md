@@ -128,7 +128,8 @@ git commit -m "Update website source"
 
 The hub page contains a black-and-white visitor-map widget with red location
 dots. Because GitHub Pages is static, real visitor counting and location
-aggregation require an external service such as ClustrMaps or PulseMaps.
+aggregation require an external service such as MapMyVisitors, ClustrMaps, or
+PulseMaps.
 
 The configuration entry is in:
 
@@ -140,12 +141,26 @@ Look for:
 
 ```json
 "visitorWidget": {
-  "enabled": true,
-  "scriptSrc": ""
+  "trackingEnabled": true,
+  "displayEnabled": false,
+  "scriptSrc": "//mapmyvisitors.com/map.js?d=..."
 }
 ```
 
-To enable live tracking:
+Current behavior:
+
+- `trackingEnabled: true` loads the visitor script so the external dashboard can
+  collect visits and approximate regions.
+- `displayEnabled: false` hides the public widget on the website while tracking
+  continues in the background.
+
+To show the public widget later, change:
+
+```json
+"displayEnabled": true
+```
+
+To replace the tracking service:
 
 1. Register `https://racoonykc.github.io` on a visitor-map service.
 2. Copy only the script `src` URL from the embed code.
@@ -155,7 +170,7 @@ To enable live tracking:
 Example shape:
 
 ```json
-"scriptSrc": "//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=YOUR_SITE_KEY"
+"scriptSrc": "//mapmyvisitors.com/map.js?d=YOUR_SITE_KEY&cl=ffffff&w=a"
 ```
 
 Do not put private tokens in frontend code. Visitor-map widgets should only use

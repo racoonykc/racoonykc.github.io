@@ -620,6 +620,15 @@ main {
   border-color: #f6f1e8;
   transform: translateY(-2px);
 }
+.visitor-tracker {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 .visitor-widget {
   position: absolute;
   right: 22px;
@@ -688,6 +697,9 @@ main {
   min-width: 0;
   max-height: 64px;
   overflow: hidden;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.62rem;
+  line-height: 1.46;
 }
 .visitor-widget__embed img,
 .visitor-widget__embed canvas,
