@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REMOTE="https://github.com/racoonykc/racoonykc.github.io.git"
 GITHUB_USER="racoonykc"
+REMOTE="https://${GITHUB_USER}@github.com/racoonykc/racoonykc.github.io.git"
 HOMEPAGES_ROOT="/SPXvePFS/share-users/kcyang/homepages"
 SOURCE_DIR="${HOMEPAGES_ROOT}/homepage-source"
 DEPLOY_DIR="${HOMEPAGES_ROOT}/site-deploy"
@@ -93,10 +93,12 @@ esac
 EOF
 
 echo "Pushing homepage-source..."
-GIT_ASKPASS="$askpass" GIT_TERMINAL_PROMPT=0 git -C "$SOURCE_DIR" push "$REMOTE" homepage-source
+GIT_ASKPASS="$askpass" GIT_TERMINAL_PROMPT=0 \
+	git -c credential.helper= -C "$SOURCE_DIR" push "$REMOTE" homepage-source
 
 echo "Pushing deploy-homepage..."
-GIT_ASKPASS="$askpass" GIT_TERMINAL_PROMPT=0 git -C "$DEPLOY_DIR" push "$REMOTE" deploy-homepage
+GIT_ASKPASS="$askpass" GIT_TERMINAL_PROMPT=0 \
+	git -c credential.helper= -C "$DEPLOY_DIR" push "$REMOTE" deploy-homepage
 
 cat <<'DONE'
 
