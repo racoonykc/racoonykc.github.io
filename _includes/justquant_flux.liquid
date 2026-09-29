@@ -1,0 +1,35 @@
+{% if include.variant == 'schnell' %}
+  {% assign names = 'Full precision|ConvRot|SVDQuant|JustQuant' | split: '|' %}
+  {% assign notes = 'BF16|W4A4 + Rotation|W4A4 + Smooth + SVD|Naive W4A4' | split: '|' %}
+  {% assign files = '00_fp.png|01_convrot.png|02_svdquant.png|03_ours_10500.png' | split: '|' %}
+  {% assign scenes = site.data.justquant_gallery.scenes %}
+  {% assign first_scene = scenes | first %}
+{% else %}
+  {% assign names = 'Full precision|PTQ|QAT|JustQuant' | split: '|' %}
+  {% assign notes = 'BF16|Naive W4A4|Naive W4A4|Naive W4A4' | split: '|' %}
+  {% assign files = 'fp|ptq|qat|justquant' | split: '|' %}
+{% endif %}
+<div class="jq-gallery" data-gallery {% if include.variant == 'schnell' %}data-scene-gallery data-source-root="{{ '/assets/img/justquant/flux-archive/' | relative_url }}" data-active-scene="{{ first_scene.id }}"{% endif %}>
+  <div class="jq-gallery-heading"><p>{% if include.variant == 'schnell' %}FLUX / {{ scenes.size }} high-resolution comparisons{% else %}FLUX.1-dev / first-page comparison{% endif %}</p><div class="jq-gallery-controls"><button type="button" data-direction="-1" aria-label="Previous {{ include.variant }} sample" title="Previous method"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button><button type="button" data-direction="1" aria-label="Next {{ include.variant }} sample" title="Next method"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div></div>
+  {% if include.variant == 'schnell' %}
+  <div class="jq-scene-toolbar"><div class="jq-scene-title"><strong data-scene-name>{{ first_scene.label }}</strong><span data-scene-counter>01 / {{ scenes.size }}</span><span class="jq-scene-resolution">1024 &times; 1024</span></div><div class="jq-scene-navigation"><button type="button" data-scene-direction="-1" aria-label="Previous FLUX scene" title="Previous scene" disabled><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button><button type="button" data-scene-direction="1" aria-label="Next FLUX scene" title="Next scene"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button></div></div>
+  {% endif %}
+  <div class="jq-gallery-track jq-flux-track" tabindex="0" role="region" aria-label="FLUX {{ include.variant }} image comparison" data-track>
+    {% for name in names %}
+    {% if include.variant == 'schnell' %}
+      {% assign asset = '/assets/img/justquant/flux-archive/' | append: first_scene.id | append: '/' | append: files[forloop.index0] %}
+      {% assign scene_label = first_scene.label %}
+    {% else %}
+      {% assign asset = '/assets/img/justquant/flux-dev-' | append: files[forloop.index0] | append: '.png' %}
+      {% assign scene_label = 'Paper teaser' %}
+    {% endif %}
+    <figure class="{% if name == 'JustQuant' %}jq-sample-ours{% endif %}"><a class="jq-original-link" href="{{ asset | relative_url }}" target="_blank" rel="noopener" aria-label="Open original: {{ scene_label }}, {{ name }}" data-original-link><img src="{{ asset | relative_url }}" alt="{{ scene_label }}: FLUX image generated with {{ name }}, {{ notes[forloop.index0] }}." width="1024" height="1024" loading="lazy" decoding="async" data-method-file="{{ files[forloop.index0] }}" data-method-name="{{ name }}"><span class="jq-original-icon" aria-hidden="true"><i class="fa-solid fa-expand"></i></span></a><figcaption><strong>{{ name }}</strong><span class="{% if forloop.first %}jq-op-baseline{% elsif include.variant == 'schnell' and name != 'JustQuant' %}jq-op-extra{% else %}jq-op-none{% endif %}">{{ notes[forloop.index0] }}</span></figcaption></figure>
+    {% endfor %}
+  </div>
+  {% if include.variant == 'schnell' %}
+  <div class="jq-scene-thumbnails" role="toolbar" aria-label="FLUX comparison scenes">
+    {% for scene in scenes %}<button type="button" data-scene-id="{{ scene.id }}" data-scene-label="{{ scene.label }}" aria-label="Show comparison: {{ scene.label }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" tabindex="{% if forloop.first %}0{% else %}-1{% endif %}" title="{{ scene.label }}"><img src="{{ '/assets/img/justquant/flux-archive/' | append: scene.id | append: '/thumbnail.jpg' | relative_url }}" alt="" width="160" height="160" loading="lazy" decoding="async"><span>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span></button>{% endfor %}
+  </div>
+  <p class="jq-scene-status" role="status" aria-live="polite" data-scene-status></p>
+  {% endif %}
+</div>

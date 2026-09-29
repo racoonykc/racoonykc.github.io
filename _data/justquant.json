@@ -1,0 +1,743 @@
+{
+  "source": "JustQuant_paper/experiments.tex, active main-paper tables; synchronized 2026-09-29",
+  "tables": {
+    "dit10": {
+      "caption": "DiT-XL/2: ImageNet 256, 10K samples, 50 sampling steps, CFG 1.5.",
+      "headers": [
+        "W / A",
+        "Training / steps",
+        "FID &darr;",
+        "sFID &darr;",
+        "IS &uarr;"
+      ],
+      "operators": true,
+      "rows": [
+        {
+          "method": "FP",
+          "cells": [
+            "32 / 32",
+            "- / 7000k",
+            "6.78",
+            "20.56",
+            "243.70"
+          ],
+          "ops": "--"
+        },
+        {
+          "method": "SVDQuant",
+          "cells": [
+            "4 / 4",
+            "PTQ / 0k",
+            "81.28",
+            "67.27",
+            "29.17"
+          ],
+          "ops": "Smooth, SVD"
+        },
+        {
+          "method": "ConvRot",
+          "cells": [
+            "4 / 4",
+            "PTQ / 0k",
+            "18.69",
+            "32.06",
+            "139.54"
+          ],
+          "ops": "Rotation"
+        },
+        {
+          "method": "QuaRot",
+          "cells": [
+            "4 / 4",
+            "PTQ / 0k",
+            "53.31",
+            "56.74",
+            "53.12"
+          ],
+          "ops": "Rotation"
+        },
+        {
+          "method": "VETA-DiT",
+          "cells": [
+            "4 / 4",
+            "PTQ / 14.4k",
+            "9.87",
+            "25.52",
+            "202.55"
+          ],
+          "ops": "Smooth, Rotation"
+        },
+        {
+          "method": "TreeQ",
+          "cells": [
+            "4 / 4",
+            "PTQ / 36.9k",
+            "6.92",
+            "20.86",
+            "219.66"
+          ],
+          "ops": "MP, SVD, Rotation"
+        },
+        {
+          "method": "RobuQ",
+          "cells": [
+            "4 / 4",
+            "QAT / 20k",
+            "8.20",
+            "22.94",
+            "222.02"
+          ],
+          "ops": "Norm, SVD, Rotation"
+        },
+        {
+          "method": "QAD",
+          "cells": [
+            "4 / 4",
+            "QAD / 20k",
+            "188.26",
+            "190.47",
+            "3.89"
+          ],
+          "ops": "None"
+        },
+        {
+          "method": "QAT",
+          "cells": [
+            "4 / 4",
+            "QAT / 20k",
+            "10.72",
+            "26.55",
+            "196.53"
+          ],
+          "ops": "None"
+        },
+        {
+          "method": "JustQuant",
+          "cells": [
+            "4 / 4",
+            "QAT / 20k",
+            "6.48",
+            "19.31",
+            "238.31"
+          ],
+          "ops": "None"
+        },
+        {
+          "method": "TerDiT",
+          "cells": [
+            "1.58 / 32",
+            "QAT / 1750k",
+            "8.23",
+            "20.57",
+            "172.23"
+          ],
+          "ops": "Norm"
+        },
+        {
+          "method": "JustQuant",
+          "cells": [
+            "1.58 / 32",
+            "QAT / 110k",
+            "6.56",
+            "19.84",
+            "249.65"
+          ],
+          "ops": "None"
+        },
+        {
+          "method": "RobuQ",
+          "cells": [
+            "1.58 / 4",
+            "QAT / 100k",
+            "7.76",
+            "20.81",
+            "195.98"
+          ],
+          "ops": "Norm, SVD, Rotation"
+        },
+        {
+          "method": "QAT",
+          "cells": [
+            "1.58 / 4",
+            "QAT / 100k",
+            "9.93",
+            "20.33",
+            "155.85"
+          ],
+          "ops": "None"
+        },
+        {
+          "method": "JustQuant",
+          "cells": [
+            "1.58 / 4",
+            "QAT / 110k",
+            "7.23",
+            "19.88",
+            "223.99"
+          ],
+          "ops": "None"
+        }
+      ]
+    },
+    "dit50": {
+      "caption": "DiT-XL/2: ImageNet 256, 50K samples, 250 sampling steps, CFG 1.5.",
+      "headers": [
+        "W / A",
+        "Training / steps",
+        "FID &darr;",
+        "sFID &darr;",
+        "IS &uarr;"
+      ],
+      "operators": true,
+      "rows": [
+        {
+          "method": "FP",
+          "cells": [
+            "32 / 32",
+            "- / 7000k",
+            "2.27",
+            "4.55",
+            "277.83"
+          ],
+          "ops": "--"
+        },
+        {
+          "method": "SVDQuant",
+          "cells": [
+            "4 / 4",
+            "PTQ / 0k",
+            "60.01",
+            "37.85",
+            "39.26"
+          ],
+          "ops": "Smooth, SVD"
+        },
+        {
+          "method": "ConvRot",
+          "cells": [
+            "4 / 4",
+            "PTQ / 0k",
+            "7.98",
+            "13.36",
+            "187.96"
+          ],
+          "ops": "Rotation"
+        },
+        {
+          "method": "VETA-DiT",
+          "cells": [
+            "4 / 4",
+            "PTQ / 14.4k",
+            "2.99",
+            "6.27",
+            "247.05"
+          ],
+          "ops": "Smooth, Rotation"
+        },
+        {
+          "method": "RobuQ",
+          "cells": [
+            "4 / 4",
+            "QAT / 20k",
+            "2.71",
+            "5.20",
+            "265.02"
+          ],
+          "ops": "Norm, SVD, Rotation"
+        },
+        {
+          "method": "QAT",
+          "cells": [
+            "4 / 4",
+            "QAT / 20k",
+            "5.15",
+            "8.34",
+            "220.53"
+          ],
+          "ops": "None"
+        },
+        {
+          "method": "JustQuant",
+          "cells": [
+            "4 / 4",
+            "QAT / 20k",
+            "3.32",
+            "5.79",
+            "256.56"
+          ],
+          "ops": "None"
+        },
+        {
+          "method": "TerDiT",
+          "cells": [
+            "1.58 / 32",
+            "QAT / 1750k",
+            "4.34",
+            "4.99",
+            "183.49"
+          ],
+          "ops": "Norm"
+        },
+        {
+          "method": "JustQuant",
+          "cells": [
+            "1.58 / 32",
+            "QAT / 110k",
+            "3.05",
+            "4.59",
+            "266.83"
+          ],
+          "ops": "None"
+        },
+        {
+          "method": "RobuQ",
+          "cells": [
+            "1.58 / 4",
+            "QAT / 100k",
+            "3.21",
+            "4.86",
+            "217.04"
+          ],
+          "ops": "Norm, SVD, Rotation"
+        },
+        {
+          "method": "QAT",
+          "cells": [
+            "1.58 / 4",
+            "QAT / 100k",
+            "5.57",
+            "5.57",
+            "166.06"
+          ],
+          "ops": "None"
+        },
+        {
+          "method": "JustQuant",
+          "cells": [
+            "1.58 / 4",
+            "QAT / 110k",
+            "3.30",
+            "4.51",
+            "241.95"
+          ],
+          "ops": "None"
+        }
+      ]
+    },
+    "schnell": {
+      "caption": "FLUX.1-schnell: 4 sampling steps. MJHQ metrics and GenEval scores.",
+      "headers": [
+        "MJHQ FID &darr;",
+        "CLIP-IQA &uarr;",
+        "ImageReward &uarr;",
+        "Single &uarr;",
+        "Count &uarr;",
+        "Color &uarr;",
+        "Overall &uarr;"
+      ],
+      "operators": true,
+      "rows": [
+        {
+          "method": "FP",
+          "cells": [
+            "19.15",
+            "0.936",
+            "0.959",
+            "0.9844",
+            "0.5938",
+            "0.7872",
+            "0.6677"
+          ],
+          "ops": "--"
+        },
+        {
+          "method": "ConvRot",
+          "cells": [
+            "17.86",
+            "0.936",
+            "0.947",
+            "0.9812",
+            "0.6406",
+            "0.7819",
+            "0.6817"
+          ],
+          "ops": "Rotation"
+        },
+        {
+          "method": "SVDQuant",
+          "cells": [
+            "18.51",
+            "0.938",
+            "0.968",
+            "0.9906",
+            "0.6219",
+            "0.8138",
+            "0.6775"
+          ],
+          "ops": "SVD"
+        },
+        {
+          "method": "Naive INT4",
+          "cells": [
+            "18.37",
+            "0.929",
+            "0.902",
+            "0.9844",
+            "0.5813",
+            "0.7846",
+            "0.6753"
+          ],
+          "ops": "None"
+        },
+        {
+          "method": "QAT",
+          "cells": [
+            "17.98",
+            "0.925",
+            "0.912",
+            "0.9844",
+            "0.6625",
+            "0.7872",
+            "0.6825"
+          ],
+          "ops": "None"
+        },
+        {
+          "method": "JustQuant",
+          "cells": [
+            "17.62",
+            "0.943",
+            "0.993",
+            "0.9938",
+            "0.6844",
+            "0.8351",
+            "0.7149"
+          ],
+          "ops": "None"
+        }
+      ]
+    },
+    "dev": {
+      "caption": "FLUX.1-dev: 50 sampling steps. MJHQ metrics and GenEval scores.",
+      "headers": [
+        "MJHQ FID &darr;",
+        "CLIP-IQA &uarr;",
+        "ImageReward &uarr;",
+        "Single &uarr;",
+        "Count &uarr;",
+        "Color &uarr;",
+        "Overall &uarr;"
+      ],
+      "operators": true,
+      "rows": [
+        {
+          "method": "FP",
+          "cells": [
+            "20.26",
+            "0.952",
+            "0.958",
+            "0.9875",
+            "0.7281",
+            "0.7926",
+            "0.6707"
+          ],
+          "ops": "--"
+        },
+        {
+          "method": "ConvRot",
+          "cells": [
+            "19.78",
+            "0.953",
+            "0.948",
+            "0.9844",
+            "0.7094",
+            "0.7979",
+            "0.6662"
+          ],
+          "ops": "Rotation"
+        },
+        {
+          "method": "SVDQuant",
+          "cells": [
+            "19.71",
+            "0.948",
+            "0.961",
+            "0.9969",
+            "0.6938",
+            "0.8032",
+            "0.6687"
+          ],
+          "ops": "SVD"
+        },
+        {
+          "method": "Naive INT4",
+          "cells": [
+            "24.29",
+            "0.923",
+            "0.754",
+            "0.9844",
+            "0.7094",
+            "0.7952",
+            "0.6465"
+          ],
+          "ops": "None"
+        },
+        {
+          "method": "QAT",
+          "cells": [
+            "22.54",
+            "0.917",
+            "0.520",
+            "0.9500",
+            "0.5312",
+            "0.6888",
+            "0.5302"
+          ],
+          "ops": "None"
+        },
+        {
+          "method": "QAD",
+          "cells": [
+            "20.44",
+            "0.955",
+            "0.898",
+            "0.9906",
+            "0.6906",
+            "0.7819",
+            "0.6585"
+          ],
+          "ops": "None"
+        },
+        {
+          "method": "JustQuant",
+          "cells": [
+            "20.21",
+            "0.951",
+            "0.956",
+            "0.9906",
+            "0.7188",
+            "0.8032",
+            "0.6643"
+          ],
+          "ops": "None"
+        }
+      ]
+    },
+    "elf4": {
+      "caption": "ELF-B (105M): OpenWebText, W4A4. Generation perplexity over four seeds.",
+      "headers": [
+        "Qwen3-8B-Base PPL &darr;",
+        "Delta vs. FP",
+        "GPT-2-Large PPL &darr;",
+        "Delta vs. FP"
+      ],
+      "operators": true,
+      "rows": [
+        {
+          "method": "FP",
+          "cells": [
+            "14.729 +/- 0.152",
+            "--",
+            "19.029 +/- 0.305",
+            "--"
+          ],
+          "ops": "--"
+        },
+        {
+          "method": "JustQuant",
+          "cells": [
+            "14.854 +/- 0.344",
+            "+0.125",
+            "19.180 +/- 0.417",
+            "+0.152"
+          ],
+          "ops": "None"
+        },
+        {
+          "method": "RobuQ",
+          "cells": [
+            "16.751 +/- 0.384",
+            "+2.022",
+            "22.089 +/- 0.529",
+            "+3.061"
+          ],
+          "ops": "Hadamard, SVD"
+        },
+        {
+          "method": "Direct QAT",
+          "cells": [
+            "19.625 +/- 0.327",
+            "+4.896",
+            "25.011 +/- 0.465",
+            "+5.983"
+          ],
+          "ops": "None"
+        }
+      ]
+    },
+    "elf158": {
+      "caption": "ELF-B (105M): OpenWebText, W1.58A4. Generation perplexity over four seeds.",
+      "headers": [
+        "Qwen3-8B-Base PPL &darr;",
+        "Delta vs. FP",
+        "GPT-2-Large PPL &darr;",
+        "Delta vs. FP"
+      ],
+      "operators": true,
+      "rows": [
+        {
+          "method": "FP",
+          "cells": [
+            "14.823 +/- 0.208",
+            "--",
+            "19.254 +/- 0.253",
+            "--"
+          ],
+          "ops": "--"
+        },
+        {
+          "method": "JustQuant",
+          "cells": [
+            "14.626 +/- 0.482",
+            "-0.197",
+            "19.038 +/- 0.634",
+            "-0.216"
+          ],
+          "ops": "None"
+        },
+        {
+          "method": "RobuQ",
+          "cells": [
+            "18.537 +/- 0.265",
+            "+3.714",
+            "25.707 +/- 0.414",
+            "+6.453"
+          ],
+          "ops": "Hadamard, SVD"
+        },
+        {
+          "method": "Direct QAT",
+          "cells": [
+            "16.776 +/- 0.255",
+            "+1.953",
+            "22.051 +/- 0.391",
+            "+2.797"
+          ],
+          "ops": "None"
+        }
+      ]
+    },
+    "lladaGsm": {
+      "caption": "LLaDA-8B: GSM8K, NVFP4 W4A4. All scores are higher-is-better.",
+      "headers": [
+        "Greedy &uarr;",
+        "pass@1 &uarr;",
+        "pass@4 &uarr;",
+        "pass@16 &uarr;"
+      ],
+      "rows": [
+        {
+          "method": "FP",
+          "cells": [
+            "0.6748",
+            "0.6307",
+            "0.8539",
+            "0.9325"
+          ]
+        },
+        {
+          "method": "PTQ",
+          "cells": [
+            "0.6035",
+            "0.5704",
+            "0.8122",
+            "0.9113"
+          ]
+        },
+        {
+          "method": "QAT",
+          "cells": [
+            "0.6138",
+            "0.5836",
+            "0.8203",
+            "0.9163"
+          ]
+        },
+        {
+          "method": "QAD",
+          "cells": [
+            "0.6475",
+            "0.6015",
+            "0.8287",
+            "0.9196"
+          ]
+        },
+        {
+          "method": "JustQuant",
+          "cells": [
+            "0.6543",
+            "0.6137",
+            "0.8455",
+            "0.9249"
+          ]
+        }
+      ]
+    },
+    "lladaTransfer": {
+      "caption": "LLaDA-8B: held-out transfer after GSM8K-only distillation, NVFP4 W4A4.",
+      "headers": [
+        "PIQA &uarr;",
+        "ARC-C &uarr;",
+        "C-EVAL &uarr;",
+        "HumanEval &uarr;"
+      ],
+      "rows": [
+        {
+          "method": "FP",
+          "cells": [
+            "0.8300",
+            "0.8662",
+            "0.6440",
+            "0.4512"
+          ]
+        },
+        {
+          "method": "PTQ",
+          "cells": [
+            "0.8280",
+            "0.8495",
+            "0.6420",
+            "0.4268"
+          ]
+        },
+        {
+          "method": "QAT",
+          "cells": [
+            "0.8150",
+            "0.8200",
+            "0.6050",
+            "0.3512"
+          ]
+        },
+        {
+          "method": "QAD",
+          "cells": [
+            "0.8320",
+            "0.8562",
+            "0.6440",
+            "0.4512"
+          ]
+        },
+        {
+          "method": "JustQuant",
+          "cells": [
+            "0.8420",
+            "0.8562",
+            "0.6420",
+            "0.4451"
+          ]
+        }
+      ]
+    }
+  }
+}

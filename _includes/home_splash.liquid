@@ -1,0 +1,17 @@
+<div
+  id="home-splash"
+  class="home-splash"
+  role="region"
+  aria-label="Introduction. Press Enter to enter the site."
+  lang="en"
+>
+  <canvas id="background" class="home-splash__canvas" aria-hidden="true"></canvas>
+  <div class="home-splash__content">
+    <h1 class="home-splash__name">Kaicheng Yang</h1>
+    <p class="home-splash__tagline">Not A + B, find a new C.</p>
+    <span class="home-splash__hint">Press Enter to enter</span>
+  </div>
+</div>
+<script src="{{ '/assets/js/fluid-config.js' | relative_url | bust_file_cache }}"></script>
+<script src="{{ '/assets/js/fluid-background.js' | relative_url | bust_file_cache }}"></script>
+<script defer src="{{ '/assets/js/home-splash.js' | relative_url | bust_file_cache }}"></script>

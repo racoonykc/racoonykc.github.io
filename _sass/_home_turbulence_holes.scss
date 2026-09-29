@@ -1,0 +1,111 @@
+// Soft homepage forest atmosphere behind the main content.
+
+.home-forest-decor {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: linear-gradient(115deg, rgba(0, 0, 0, 0.018), rgba(255, 255, 255, 0) 42%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.025), rgba(255, 255, 255, 0) 30%);
+}
+
+// Keep main column above the decorative layer.
+body.home-turb-decor > .container[role="main"] {
+  position: relative;
+  z-index: 2;
+}
+
+.home-forest-decor__trunks {
+  position: absolute;
+  inset: -8% -10% 0;
+  opacity: 0.12;
+  background-image: linear-gradient(92deg, transparent 0 7%, rgba(0, 0, 0, 0.07) 7.4% 8.1%, transparent 8.5% 100%),
+    linear-gradient(87deg, transparent 0 19%, rgba(0, 0, 0, 0.05) 19.3% 20%, transparent 20.4% 100%),
+    linear-gradient(91deg, transparent 0 38%, rgba(0, 0, 0, 0.05) 38.2% 39%, transparent 39.4% 100%),
+    linear-gradient(88deg, transparent 0 63%, rgba(0, 0, 0, 0.04) 63.4% 64.1%, transparent 64.5% 100%),
+    linear-gradient(93deg, transparent 0 82%, rgba(0, 0, 0, 0.04) 82.2% 83%, transparent 83.5% 100%);
+  background-size:
+    460px 100%,
+    620px 100%,
+    740px 100%,
+    520px 100%,
+    680px 100%;
+  filter: blur(0.2px);
+  animation: home-forest-breathe 38s ease-in-out infinite;
+}
+
+.home-forest-decor__mist {
+  position: absolute;
+  width: 56vw;
+  height: 46vh;
+  border-radius: 999px;
+  filter: blur(56px);
+  opacity: 0.1;
+  background: rgba(0, 0, 0, 0.08);
+  animation: home-forest-drift 46s ease-in-out infinite;
+}
+
+.home-forest-decor__mist--one {
+  left: -18vw;
+  top: 12vh;
+}
+
+.home-forest-decor__mist--two {
+  right: -24vw;
+  bottom: 6vh;
+  animation-duration: 42s;
+  animation-delay: -13s;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="dark"] .home-forest-decor {
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.045), rgba(0, 0, 0, 0) 44%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0) 32%);
+}
+
+html[data-theme="dark"] .home-forest-decor__trunks {
+  opacity: 0.16;
+  mix-blend-mode: screen;
+}
+
+html[data-theme="dark"] .home-forest-decor__mist {
+  opacity: 0.08;
+}
+
+@keyframes home-forest-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(3vw, -2vh, 0) scale(1.04);
+  }
+}
+
+@keyframes home-forest-breathe {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0.8vw, 0, 0);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .home-forest-decor__trunks {
+    opacity: 0.1;
+  }
+
+  .home-forest-decor__mist {
+    opacity: 0.08;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-forest-decor__mist,
+  .home-forest-decor__trunks {
+    animation: none;
+  }
+}

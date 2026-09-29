@@ -1,0 +1,35 @@
+{% assign stages = 'Original material|Planks being replaced|New material' | split: '|' %}
+{% assign descriptions = 'The original ship|Different planks, same structure|The ship carries on' | split: '|' %}
+{% assign planks = '0|1|2|3|4|5' | split: '|' %}
+<figure class="jq-theseus" aria-labelledby="theseus-caption">
+  <div class="jq-ship-sequence">
+    {% for label in stages %}
+    {% assign stage = forloop.index0 %}
+    {% assign replacements = stage | times: 3 %}
+    <div class="jq-ship-stage">
+      <svg class="jq-ship" viewBox="0 0 320 226" role="img" aria-labelledby="ship-title-{{ stage }}">
+        <title id="ship-title-{{ stage }}">{{ label }}: {{ replacements }} of six schematic hull sections replaced, with the same outline and sails.</title>
+        <defs><clipPath id="ship-hull-{{ stage }}"><path d="M36 151 H282 L257 184 Q240 202 215 202 H108 Q79 202 61 181 Z"/></clipPath></defs>
+        <g class="jq-ship-rigging" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+          <path d="M157 24 V151 M146 39 L76 136 H146 Z M168 43 L243 136 H168 Z"/>
+          <path d="M48 150 L157 24 L270 150" stroke="#a3a3a3" stroke-width="1"/>
+          <path d="M147 84 H116 M147 109 H98 M168 84 H200 M168 109 H220" stroke="#bdbdbd" stroke-width="1"/>
+        </g>
+        <g clip-path="url(#ship-hull-{{ stage }})">
+          {% for plank in planks %}
+          {% assign plank_index = plank | plus: 0 %}
+          {% assign x = plank_index | times: 42 | plus: 32 %}
+          <rect class="jq-ship-plank {% if plank_index < replacements %}jq-ship-plank-new{% endif %}" x="{{ x }}" y="151" width="42" height="54"/>
+          {% if plank_index >= replacements %}<path class="jq-ship-grain" d="M{{ x | plus: 8 }} 165 h24 M{{ x | plus: 12 }} 175 h18 M{{ x | plus: 8 }} 185 h24"/>{% endif %}
+          {% endfor %}
+        </g>
+        <path class="jq-ship-outline" d="M36 151 H282 L257 184 Q240 202 215 202 H108 Q79 202 61 181 Z"/>
+        <path class="jq-ship-water" d="M23 213 H93 M107 213 H213 M227 213 H296"/>
+      </svg>
+      <div class="jq-ship-label"><span class="jq-ship-number">0{{ forloop.index }}</span><strong>{{ label }}</strong><span>{{ descriptions[stage] }}</span></div>
+      {% unless forloop.last %}<i class="fa-solid fa-arrow-right jq-ship-arrow" aria-hidden="true"></i>{% endunless %}
+    </div>
+    {% endfor %}
+  </div>
+  <figcaption id="theseus-caption"><span class="jq-ship-key"><span class="jq-plank-swatch" aria-hidden="true"></span>Original planks <span class="jq-plank-swatch jq-plank-swatch-new" aria-hidden="true"></span>Replacement planks</span><span>New material. The same ship. A metaphor for preserving behavior in a low-bit body.</span></figcaption>
+</figure>

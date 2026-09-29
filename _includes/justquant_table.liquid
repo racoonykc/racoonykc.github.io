@@ -1,0 +1,15 @@
+{% assign results = site.data.justquant.tables[include.key] %}
+<div class="jq-table-scroll" role="region" aria-label="{{ results.caption }}" tabindex="0">
+  <table class="jq-table" data-table="{{ include.key }}">
+    <caption>{{ results.caption }}</caption>
+    <thead><tr><th scope="col">Method</th>{% for heading in results.headers %}<th scope="col">{{ heading }}</th>{% endfor %}{% if results.operators %}<th scope="col">Additional operators</th>{% endif %}</tr></thead>
+    <tbody>
+      {% for row in results.rows %}
+      <tr class="{% if row.method == 'JustQuant' %}jq-ours{% elsif row.method == 'FP' %}jq-baseline{% endif %}">
+        <th scope="row">{{ row.method }}</th>{% for value in row.cells %}<td>{{ value | replace: '+/-', '&plusmn;' }}</td>{% endfor %}
+        {% if results.operators %}<td class="jq-operator {% if row.ops == 'None' %}jq-op-none{% elsif row.ops == '--' %}jq-op-baseline{% else %}jq-op-extra{% endif %}">{{ row.ops }}</td>{% endif %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,113 @@
+{
+  "source": "User-provided by_image archive; original PNGs are copied without re-encoding. Scene labels describe visible subjects, not generation prompts.",
+  "scenes": [
+    {
+      "id": "00aa40435c29071a2c2b1ae05d9a5cdfd463c2b0",
+      "label": "Sunlit leaves",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "000111",
+      "label": "Blueberries",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "00eb42e3235aa8e078d6903994f95b28029d366e",
+      "label": "Bioluminescent sea",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "0a393f0b7940ad9e594ca44188ff2c42b789f3d3",
+      "label": "Piano and lightning",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "0cad8882f0d22c959cf396a93da355eef80911a4",
+      "label": "Amphitheater at night",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "0cba6961a2fc73f4ad67784cba906a229ad9d210",
+      "label": "Stone courtyard",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "0ccd830fe6b485ed0defe8b307a7d1ced176e1f6",
+      "label": "Street portrait",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "0ce057a5788975d212febbda03dd1e08ea26d581",
+      "label": "Blue forest",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "0d2cbc4b2614a83d2ee11cc8ce4da52f5e828639",
+      "label": "Car and flames",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "0dd34e480be695a28a354388f33017287c655631",
+      "label": "Twisted tree",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "0ddba61a3b36d2adbc9f058df6332b80a84668cd",
+      "label": "Colored smoke",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "0dead77007eea33ead4b08e2e5d84f1a20b5ab63",
+      "label": "Forest wildlife",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "0df4e557ec42ed6028ab3fe8671a7c55cdb841f2",
+      "label": "Metal medallion",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "0e0e1edd207f005cee86bb0b806267e2bb4d991e",
+      "label": "Guitar portrait",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "0e1ab01b88fff19efd99a39dbfd4cd6d1f2bf904",
+      "label": "Studio sports car",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "0e3f8e39a02a819dc2b700a7b7c35b89cdc7e395",
+      "label": "Coastal city",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "0ea56e8ce788bc7e15685e44af14025afcd410b6",
+      "label": "Dew-covered leaves",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "0eb6f3ada3d9c0af66a0be819795020c234edea9",
+      "label": "Action figure",
+      "width": 1024,
+      "height": 1024
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+.news .table {
+  color: var(--global-text-color);
+}
+
+.news a.news-justquant-release {
+  --news-release-colors: #be185d, #7c3aed, #2563eb, #0f766e, #a16207, #be185d;
+  color: #7c3aed;
+  font-weight: 600;
+  text-decoration: none;
+
+  strong { font-weight: 750; }
+
+  &:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+}
+
+html[data-theme="dark"] .news a.news-justquant-release {
+  --news-release-colors: #ff85c1, #c4a2ff, #87baff, #6ee7cd, #ffd68a, #ff85c1;
+  color: #c4a2ff;
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .news a.news-justquant-release {
+    background-image: linear-gradient(110deg, var(--news-release-colors));
+    background-size: 250% 100%;
+    background-position: 0% 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 5px rgba(124, 58, 237, 0.18));
+    animation: justquant-news-flow 5s ease-in-out infinite alternate;
+
+    &:hover {
+      filter: drop-shadow(0 0 7px rgba(124, 58, 237, 0.35));
+    }
+  }
+}
+
+@keyframes justquant-news-flow {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news a.news-justquant-release { animation: none; }
+}
+
+@media (forced-colors: active) {
+  .news a.news-justquant-release {
+    background: none;
+    color: LinkText;
+    -webkit-text-fill-color: LinkText;
+    filter: none;
+    animation: none;
+  }
+}

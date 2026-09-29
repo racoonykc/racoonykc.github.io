@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.description | escape }}">
+    <meta name="theme-color" content="#ffffff">
+    <title>{{ page.title }} | {{ site.first_name }} {{ site.last_name }}</title>
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/justquant.css' | relative_url }}?v=6">
+    <script src="{{ '/assets/js/justquant.js' | relative_url }}?v=6" defer></script>
+  </head>
+  <body class="jq-project-site">
+    <a class="jq-skip-link" href="#project-content">Skip to project</a>
+    <header class="jq-site-header"><div class="jq-container">
+      <a class="jq-site-name" href="{{ '/' | relative_url }}">{{ site.first_name }} {{ site.last_name }}</a>
+      <nav aria-label="Personal website"><a href="{{ '/' | relative_url }}">About</a><a href="{{ '/blog/' | relative_url }}">Blog</a><a href="{{ '/publications/' | relative_url }}">Pub</a><a href="{{ '/projects/' | relative_url }}">Project</a></nav>
+    </div></header>
+    <main id="project-content">{{ content }}</main>
+    <footer class="jq-site-footer"><div class="jq-container">&copy; {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.last_name }}</div></footer>
+  </body>
+</html>

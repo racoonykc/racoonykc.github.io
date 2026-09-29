@@ -1,0 +1,5 @@
+external_sources: []
+imagemagick:
+  enabled: false
+exclude:
+  - assets/jupyter/blog.ipynb

@@ -1,0 +1,151 @@
+/* --- 为特定的会议/平台缩写指定颜色 --- */
+
+/* 1. ICML - 红色 (Red) */
+a[abbr="ICML"] {
+  /* 确保文本颜色是红色 */
+  color: #e53935 !important;
+  /* 可选：添加背景或边框让它更突出 */
+  /* border: 1px solid #e53935; */
+  /* padding: 1px 4px; */
+  /* border-radius: 4px; */
+}
+
+/* 2. ArXiv - 绿色 (Green) */
+a[abbr="ArXiv"] {
+  /* 确保文本颜色是绿色 */
+  color: #43a047 !important;
+}
+
+/* 4. （示例）CVPR - 紫色 */
+a[abbr="CVPR"] {
+  color: #8e24aa !important;
+}
+
+.research-layers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  position: relative;
+}
+
+.research-layers::before {
+  content: "";
+  position: absolute;
+  left: 1.1rem;
+  right: 1.1rem;
+  top: 1.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--global-divider-color), transparent);
+  opacity: 0.75;
+}
+
+.research-layer-card {
+  --layer-accent: #1e1e1e;
+  --layer-surface: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 10.2rem;
+  padding: 1rem 1rem 1.05rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 3px;
+  background: var(--layer-surface);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.research-layer-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: #1e1e1e;
+}
+
+.research-layer-card::after {
+  content: "";
+  position: absolute;
+  right: -2.6rem;
+  top: -2.9rem;
+  width: 6.2rem;
+  height: 6.2rem;
+  display: none;
+}
+
+.research-layer-card--paradigms {
+  --layer-accent: #1e1e1e;
+}
+
+.research-layer-card--systems {
+  --layer-accent: #1e1e1e;
+}
+
+.research-layer-card--evidence {
+  --layer-accent: #1e1e1e;
+}
+
+.research-layer-card__meta {
+  color: var(--layer-accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.research-layer-card h3 {
+  margin: 0.55rem 0 0.45rem;
+  font-family: var(--global-heading-font);
+  font-size: 1.02rem;
+  line-height: 1.25;
+  font-weight: 650;
+  color: var(--global-text-color);
+}
+
+.research-layer-card p {
+  margin: 0;
+  color: var(--global-text-color);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  opacity: 0.82;
+  text-wrap: pretty;
+}
+
+html[data-theme="dark"] .research-layer-card {
+  --layer-surface: #1b1b1b;
+  border-color: #373737;
+  background: var(--layer-surface);
+}
+
+html[data-theme="dark"] .research-layer-card::before {
+  background: #e7e7e7;
+}
+
+@media (max-width: 991.98px) {
+  .research-layers {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .research-layers::before {
+    top: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    right: auto;
+    width: 1px;
+    height: auto;
+    background: linear-gradient(180deg, transparent, var(--global-divider-color), transparent);
+  }
+
+  .research-layer-card {
+    min-height: 0;
+    padding: 0.95rem 1rem 1rem 1.15rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .research-layer-card__meta {
+    white-space: normal;
+  }
+}

@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<article class="personal-blog blog-article">
+  <a class="blog-back" href="{{ '/blog/' | relative_url }}"><span aria-hidden="true">&larr;</span> All notes</a>
+  <header class="blog-heading">
+    {% if page.series %}<p class="blog-eyebrow">{{ page.series }}</p>{% endif %}
+    <h1{% if page.permalink == '/blog/justquant/' or page.slug == 'justquant' %} class="justquant-gradient-title"{% endif %}>{{ page.title }}</h1>
+    {% if page.description %}<p class="blog-intro">{{ page.description }}</p>{% endif %}
+    <div class="blog-article-meta">
+      <span>{{ page.author | default: site.first_name }}</span>
+      {% if page.status == 'in_progress' %}
+        <span class="blog-status">In preparation</span>
+      {% else %}
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %d, %Y' }}</time>
+      {% endif %}
+    </div>
+    {% if page.permalink == '/blog/justquant/' %}
+      <nav class="blog-language-links" aria-label="Language">
+        <span>Read in:</span>
+        <a href="{{ '/blog/justquant-zh/' | relative_url }}">中文</a>
+      </nav>
+    {% elsif page.permalink == '/blog/justquant-zh/' %}
+      <nav class="blog-language-links" aria-label="Language">
+        <span>Read in:</span>
+        <a href="{{ '/blog/justquant/' | relative_url }}">English</a>
+      </nav>
+    {% endif %}
+    {% if page.project_url or page.paper_url %}
+      <nav class="blog-entry-links" aria-label="Article resources">
+        {% if page.project_url %}<a href="{{ page.project_url | relative_url }}">Project page <span aria-hidden="true">&#8599;</span></a>{% endif %}
+        {% if page.paper_url %}<a href="{{ page.paper_url }}" target="_blank" rel="noopener">Paper <span aria-hidden="true">&#8599;</span></a>{% endif %}
+      </nav>
+    {% endif %}
+  </header>
+  {% if page.status == 'in_progress' %}
+    <aside class="blog-draft-note" aria-label="Article status">
+      <h2>Article in preparation</h2>
+      <p>{{ page.preparation_note | default: 'This article is being written. Please check back soon.' }}</p>
+    </aside>
+  {% endif %}
+  <div class="blog-prose" id="markdown-content">
+    {{ content }}
+  </div>
+</article>
