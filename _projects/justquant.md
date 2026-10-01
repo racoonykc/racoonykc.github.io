@@ -16,6 +16,7 @@ hide_page_header: true
     <div class="jq-resources" aria-label="Project resources">
       <a class="jq-link-primary" href="https://arxiv.org/pdf/2609.33601" target="_blank" rel="noopener"><i class="fa-regular fa-file-lines" aria-hidden="true"></i> Paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
       <a href="{{ '/blog/justquant/' | relative_url }}">Blog <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+      <a href="{{ '/projects/justquant/video/' | relative_url }}">Video <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
       <a href="https://github.com/racoonykc/JustQuant" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
     </div>
     <div class="jq-intro">
@@ -30,6 +31,14 @@ hide_page_header: true
       <figcaption id="deployment-caption"><span>From the paper: a survey of &le;4-bit activation quantization across eight conferences (2024&ndash;2026). <span class="jq-op-extra">Red: extra operators.</span> <span class="jq-op-none">Green: no extra operator.</span></span><a href="{{ '/assets/img/justquant/deployment-gap.svg' | relative_url }}" target="_blank" rel="noopener">Full figure <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></figcaption>
     </figure>
   </header>
+
+  <section class="jq-video-section jq-container" id="video" aria-labelledby="video-title">
+    <div class="jq-video-heading"><div><p class="jq-eyebrow">WATCH / JUSTQUANT</p><h2 id="video-title">The idea in motion.</h2></div><a href="{{ '/projects/justquant/video/' | relative_url }}">Open video page <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+    <video controls preload="none" playsinline poster="{{ '/assets/img/justquant/video-poster.jpg' | relative_url }}" aria-label="JustQuant project video">
+      <source src="{{ '/assets/video/justquant-introduction.mp4' | relative_url }}" type="video/mp4">
+      <p>Your browser cannot play this video. <a href="{{ '/assets/video/justquant-introduction.mp4' | relative_url }}">Download the MP4</a>.</p>
+    </video>
+  </section>
 
   <section class="jq-question" aria-labelledby="question-title">
     <div class="jq-container">
