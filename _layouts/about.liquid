@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="post about-post">
-  <link rel="stylesheet" href="{{ '/assets/css/home-refinement.css' | relative_url }}?v=20260929">
+  <link rel="stylesheet" href="{{ '/assets/css/home-refinement.css' | relative_url }}?v=20261011-photo-left">
   {% if page.profile %}
     <aside class="about-identity-rail">
   {% endif %}
@@ -28,10 +28,17 @@ layout: default
             {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
           {% endif %}
           {% capture sizes %}(min-width: {{ site.max_width }}) 190px, (min-width: 576px) 28vw, 92vw{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
+          {% if page.profile.image_light %}
+            {% assign profile_light_path = page.profile.image_light | prepend: 'assets/img/' %}
+            <div class="profile-theme-photo profile-theme-photo--light">
+              {% include figure.liquid loading="eager" path=profile_light_path class=profile_image_class alt="Kaicheng Yang, daytime portrait" cache_bust=true avoid_scaling=true %}
+            </div>
+            <div class="profile-theme-photo profile-theme-photo--dark">
+              {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class alt="Kaicheng Yang in a snowy mountain landscape" cache_bust=true avoid_scaling=true %}
+            </div>
+          {% else %}
+            {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt="Kaicheng Yang" cache_bust=true avoid_scaling=true %}
+          {% endif %}
         {% endif %}
         {% if page.profile.more_info %}
           <div class="more-info">{{ page.profile.more_info }}</div>

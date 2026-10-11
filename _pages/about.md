@@ -6,7 +6,7 @@ subtitle: Undergraduate Researcher · Shanghai Jiao Tong University
 
 profile:
   align: left
-  image: avatar.jpg
+  image: avatar-day-retouched.png
   image_circular: false
 
 selected_papers:
