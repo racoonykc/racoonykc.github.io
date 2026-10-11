@@ -19,6 +19,10 @@
 .about-post .research-layer-card h3 { font-size: 1rem; min-height: 2.6em; }
 .about-post .research-layer-card p { font-size: 0.85rem; line-height: 1.6; }
 .about-post .about-profile-floating img { border-radius: 4px !important; box-shadow: none !important; }
+.about-post .profile-theme-photo--dark { display: none; }
+html[data-theme="dark"] .about-post .profile-theme-photo--light { display: none; }
+html[data-theme="dark"] .about-post .profile-theme-photo--dark { display: block; }
+.about-post .profile-theme-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
 .about-post .news th { white-space: nowrap; font-size: 0.78rem; font-weight: 400; opacity: 0.65; padding: 0.55rem 1.2rem 0.55rem 0; }
 .about-post .news td { font-size: 0.88rem; padding: 0.55rem 0; }
 .about-post .news tr + tr { border-top: 1px solid var(--global-divider-color); }
@@ -46,15 +50,18 @@
   .about-post .affiliations li { flex-direction: column; gap: 0.3rem; }
 }
 @media (min-width: 992px) {
+  .about-post { --portrait-left-extension: clamp(0px, calc(50vw - 561px), 88px); }
   .container:has(.about-post) { max-width: 1120px; }
-  .about-post .about-identity-rail { position: fixed; top: 7rem; left: max(2rem, calc(50% - 545px)); width: 185px !important; }
-  .about-post .about-content { max-width: 760px; margin-left: 250px; }
+  .about-post .about-identity-rail { position: fixed; top: 7rem; left: max(2rem, calc(50% - 545px)); width: calc(352px - var(--portrait-left-extension)) !important; }
+  .about-post .about-identity-rail .post-header { max-width: 264px; }
+  .about-post .about-profile-floating { width: 352px !important; margin-left: calc(-1 * var(--portrait-left-extension)) !important; }
+  .about-post .about-content { max-width: 760px; margin-left: calc(382px - var(--portrait-left-extension)); }
   .about-post .about-identity-rail .post-title { font-size: 2.65rem; line-height: 1.12; }
   .about-post .about-identity-rail .desc { font-size: 0.8rem; line-height: 1.6; }
   .about-post .publications .col-sm-10 { flex: 0 0 83.333%; max-width: 83.333%; }
 }
 @media (max-width: 991.98px) {
-  .about-post .about-identity-rail { display: grid; grid-template-columns: minmax(0, 1fr) 100px; align-items: center; gap: 1.5rem; margin-bottom: 2rem; }
+  .about-post .about-identity-rail { display: grid; grid-template-columns: minmax(0, 1fr) 224px; align-items: center; gap: 1rem; margin-bottom: 2rem; }
   .about-post .about-identity-rail .post-header { margin: 0; }
   .about-post .about-identity-rail .post-title { font-size: 2.5rem; line-height: 1.15; }
   .about-post .about-profile-floating { width: 100% !important; margin: 0 !important; }
@@ -62,4 +69,15 @@
   .about-post .research-layer-card h3 { min-height: 0; }
   .about-post h2 { font-size: 1.35rem; }
   .about-post .publications .col-sm-10 { min-width: 0; }
+}
+@media (max-width: 575.98px) {
+  .about-post .about-identity-rail { grid-template-columns: 1fr; }
+  .about-post .about-profile-floating { max-width: 224px; }
+}
+@media (max-width: 480px) {
+  .about-post .about-identity-rail .post-title { font-size: 2rem; }
+}
+@media (max-width: 359.98px) {
+  .about-post .about-identity-rail { grid-template-columns: 1fr; }
+  .about-post .about-profile-floating { max-width: 288px; }
 }
