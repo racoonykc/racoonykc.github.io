@@ -1,6 +1,9 @@
 ---
 layout: about
 title: about
+seo_title: Kaicheng Yang (杨凯程) | SJTU · 上海交通大学
+description: "Kaicheng Yang (杨凯程, kaichengyang), undergraduate researcher at Shanghai Jiao Tong University (SJTU, 上海交通大学). Research in model quantization and diffusion models. Incoming PhD student at CUHK SphereLab."
+keywords: "Kaicheng Yang, kaichengyang, 杨凯程, SJTU, Shanghai Jiao Tong University, 上海交通大学, JustQuant, RobuQ, model quantization"
 permalink: /
 subtitle: Undergraduate Researcher · Shanghai Jiao Tong University
 
@@ -25,7 +28,7 @@ latest_posts:
 
 ## Biography
 
-I am an undergraduate researcher at **Shanghai Jiao Tong University**. I am also an **incoming PhD student at SphereLab, The Chinese University of Hong Kong**, where I will work with **[Prof. Weiyang Liu (刘威杨)](https://wyliu.com/)**. My previous work was with **[Prof. Yulun Zhang (张宇伦)](https://yulunzhang.com/)**.
+I am **Kaicheng Yang (杨凯程, kaichengyang)**, an undergraduate researcher at **Shanghai Jiao Tong University (SJTU, 上海交通大学)**. I am also an **incoming PhD student at SphereLab, The Chinese University of Hong Kong**, where I will work with **[Prof. Weiyang Liu (刘威杨)](https://wyliu.com/)**. My previous work was with **[Prof. Yulun Zhang (张宇伦)](https://yulunzhang.com/)**.
 
 My research explores the **transfer, connection, and carriers of intelligence**. I study model quantization as a way to understand how intelligence can be represented in discrete systems, and I am interested in future interfaces that connect machine intelligence with human intelligence.
 
