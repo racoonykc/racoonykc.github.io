@@ -2,7 +2,7 @@
 layout: post
 title: We released JustQuant
 # Month-level announcement; day 01 is used only for sorting.
-date: 2026-09-01 00:00:00 +0800
+date: 2026-10-01 12:00:00 +0000
 date_precision: month
 inline: true
 ---

@@ -38,6 +38,14 @@ My research explores the **transfer, connection, and carriers of intelligence**.
 
 <ul class="affiliations">
   <li>
+    <div><h3>SphereN</h3><p>Research Intern</p></div>
+    <span class="affiliation-date">2026.11 &ndash; present</span>
+  </li>
+  <li>
+    <div><h3>Einsia.AI</h3><p>Research Intern</p></div>
+    <span class="affiliation-date">2026.10 &ndash; present</span>
+  </li>
+  <li>
     <div><h3>SphereLab, The Chinese University of Hong Kong</h3><p>Incoming PhD Student · advised by <a href="https://wyliu.com/">Prof. Weiyang Liu (刘威杨)</a>.</p></div>
     <span class="affiliation-date">2026.08 &ndash; present</span>
   </li>
